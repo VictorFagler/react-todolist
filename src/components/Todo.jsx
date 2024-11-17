@@ -11,7 +11,7 @@ const Todo = ({ id, title, desc, completed, onToggle, onDelete, onEdit }) => {
 
     if (isEditing) {
       if (newTitle && newDesc) {
-        onEdit(id, newTitle, newDesc); // Pass correct id, newTitle, and newDesc
+        onEdit(id, newTitle, newDesc);
       } else {
         console.log("Title and Description cannot be empty!");
         return;
@@ -22,12 +22,12 @@ const Todo = ({ id, title, desc, completed, onToggle, onDelete, onEdit }) => {
 
   const handleDelete = (e) => {
     e.stopPropagation();
-    onDelete(id); // Correctly pass id to delete the todo
+    onDelete(id);
   };
 
   const handleToggle = (e) => {
     if (!isEditing) {
-      onToggle(id); // Toggle the completed status of the todo
+      onToggle(id);
     }
   };
 

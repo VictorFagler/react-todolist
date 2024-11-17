@@ -1,4 +1,3 @@
-// SearchTodo.js
 import React from "react";
 
 const SearchTodo = ({ searchQuery, setSearchQuery }) => {

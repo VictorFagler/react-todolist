@@ -1,9 +1,8 @@
-// App.js
 import React from "react";
 import TodoList from "./components/TodoList";
 import AddTodo from "./components/AddTodo";
 import useTodos from "./hooks/useTodos";
-import SearchTodo from "./components/SearchTodo";
+import SearchTodo from "./components/searchTodo";
 import SortDropdown from "./components/SortDropdown";
 
 function App() {

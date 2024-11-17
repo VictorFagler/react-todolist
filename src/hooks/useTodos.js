@@ -45,20 +45,17 @@ const useTodos = () => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-  // Filter and sort todos
   const filteredTodos = useMemo(() => {
-    // Step 1: Filter todos based on search query
     const filtered = todos.filter((todo) =>
       todo.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    // Step 2: Sort the filtered todos based on the selected sort option
     return filtered.sort((a, b) => {
       switch (sortOption) {
         case "alphabetic":
           return a.title.localeCompare(b.title);
         case "priority":
-          return b.priority - a.priority; // Assuming higher priority = higher number
+          return b.priority - a.priority;
         case "date":
         default:
           return new Date(b.createdAt) - new Date(a.createdAt);
@@ -107,7 +104,7 @@ const useTodos = () => {
 
   return {
     todos,
-    filteredTodos, // Already filtered and sorted todos
+    filteredTodos,
     searchQuery,
     setSearchQuery,
     sortOption,
